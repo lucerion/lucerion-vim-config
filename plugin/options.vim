@@ -1,4 +1,4 @@
-if plugin#loaded('srcery-vim')
+if helpers#plugin#loaded('srcery-vim')
   colorscheme srcery
   let [g:srcery_bold, g:srcery_italic, g:srcery_underline] = [0, 0, 0]
 endif
@@ -12,10 +12,10 @@ if executable('ag')
 endif
 
 set statusline=%w%h\ %F\ %m
-if plugin#loaded('vim-fugitive')
+if helpers#plugin#loaded('vim-fugitive')
   set statusline+=\ %{fugitive#statusline()}
 endif
-if plugin#loaded('vim-smartword')
+if helpers#plugin#loaded('vim-smartword')
   set statusline+=\ %{smartword#status()}
 endif
 set statusline+=\ %r%=%l-%v/%L
@@ -29,7 +29,7 @@ if exists('g:grep_command')
 endif
 
 " ctrlp-py-matcher
-if plugin#loaded('ctrlp-py-matcher')
+if helpers#plugin#loaded('ctrlp-py-matcher')
   let g:ctrlp_match_func = { 'match' : 'pymatcher#PyMatch' }
   let g:ctrlp_max_files = 0
   let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:1000'
@@ -64,7 +64,7 @@ let g:vimfiler_tree_leaf_icon = ' '
 let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_readonly_file_icon = '×'
-if plugin#loaded('vimfiler.vim')
+if helpers#plugin#loaded('vimfiler.vim')
   call vimfiler#custom#profile('default', 'context', { 'columns': 'size', 'safe': 0 })
 endif
 
@@ -110,7 +110,7 @@ let g:smartword_enabled = 1
 
 " unite.vim
 let g:unite_enable_auto_select = 0
-if plugin#loaded('unite.vim')
+if helpers#plugin#loaded('unite.vim')
   call unite#custom#profile('default', 'context', {
     \   'direction':    'below',
     \   'prompt':       '> ',
