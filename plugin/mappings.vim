@@ -46,9 +46,8 @@ noremap <Leader>sj :SplitjoinJoin<CR>
 noremap <Leader>ss :SplitjoinSplit<CR>
 
 " vimfiler.vim
-noremap <Leader>os :VimFilerSplit -horizontal -find -force-quit<CR>
-noremap <Leader>ov :VimFilerSplit -find -force-quit<CR>
-noremap <Leader>oe :VimFilerExplorer -find -force-quit -winwidth=50<CR>
+noremap <Leader>os :VimFilerSplit -find -force-quit -horizontal<CR>
+noremap <Leader>ov :VimFilerSplit -find -force-quit -winwidth=50<CR>
 
 augroup VimFilerMappings
   autocmd!
@@ -67,8 +66,6 @@ func! s:set_vimfiler_mappings() abort
   nmap <buffer>gg       <Plug>(vimfiler_cursor_top)
   nmap <buffer>o        <Plug>(vimfiler_expand_tree)
   nmap <buffer>O        <Plug>(vimfiler_expand_tree_recursive)
-  nmap <buffer><C-s>    <Plug>(vimfiler_split_edit_file)
-  nmap <buffer><C-p>    <Plug>(vimfiler_preview_file)
   nmap <buffer><expr>t  vimfiler#do_switch_action('tabopen')
   nmap <buffer>i        :VimFilerPrompt<CR>
   nmap <buffer>cd       <Plug>(vimfiler_make_directory)
@@ -89,6 +86,8 @@ func! s:set_vimfiler_mappings() abort
   nmap <buffer>*        <Plug>(vimfiler_set_current_mask)
   nmap <buffer>~        <Plug>(vimfiler_switch_to_home_directory)
   nmap <buffer>-        <Plug>(vimfiler_switch_to_project_directory)
+  nmap <buffer>>        <C-w>>
+  nmap <buffer><        <C-w><
 endfunc
 
 " ctrlp.vim
