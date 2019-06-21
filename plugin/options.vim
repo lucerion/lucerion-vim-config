@@ -24,8 +24,9 @@ set statusline+=\ %r%=%l-%v/%L
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_use_caching = 0
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_user_command = 'find %s -type f'
 if exists('g:grep_command')
-  let g:ctrlp_grep_command = g:grep_command
+  let g:ctrlp_user_command = 'ag -l'
 endif
 
 " ctrlp-py-matcher
