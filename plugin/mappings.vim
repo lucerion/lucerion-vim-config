@@ -86,8 +86,8 @@ func! s:set_vimfiler_mappings() abort
   nmap <buffer>*        <Plug>(vimfiler_set_current_mask)
   nmap <buffer>~        <Plug>(vimfiler_switch_to_home_directory)
   nmap <buffer>-        <Plug>(vimfiler_switch_to_project_directory)
-  nmap <buffer>>        <C-w>>
-  nmap <buffer><        <C-w><
+  nmap <buffer>>        <C-w>><Plug>(vimfiler_redraw_screen)
+  nmap <buffer><        <C-w><<Plug>(vimfiler_redraw_screen)
 endfunc
 
 " ctrlp.vim
