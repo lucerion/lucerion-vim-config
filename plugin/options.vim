@@ -144,6 +144,7 @@ let g:far#file_mask_favorites = [
   \ '**/*.*',
   \ '**/*.rb',
   \ '**/*.js',
+  \ '**/*.ts',
   \ '**/*.coffee',
   \ '**/*.html',
   \ '**/*.erb',
@@ -153,6 +154,7 @@ let g:far#file_mask_favorites = [
   \ '**/*.scss',
   \ '**/*.less',
   \ '**/*.vim',
+  \ '**/*.ex',
   \ '**/*.exs',
   \ ]
 if exists('g:grep_program')
@@ -161,6 +163,7 @@ if exists('g:grep_program')
     \ '%',
     \ '\.rb$',
     \ '\.js$',
+    \ '\.ts$',
     \ '\.coffee$',
     \ '\.html$',
     \ '\.erb$',
@@ -170,6 +173,7 @@ if exists('g:grep_program')
     \ '\.scss$',
     \ '\.less$',
     \ '\.vim$',
-    \ '\.exs$'
+    \ '\.ex$',
+    \ '\.exs$',
     \ ]
 endif
