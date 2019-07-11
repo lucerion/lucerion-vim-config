@@ -142,3 +142,9 @@ augroup FarMappings
   autocmd FileType far nnoremap <buffer><silent>q :q<CR>
   autocmd FileType far nnoremap <buffer><silent>r Xi:Fardo<CR>I
 augroup END
+
+" help
+augroup VimHelpMappings
+  autocmd!
+  autocmd FileType help nnoremap <buffer>q :q<CR>
+augroup END
