@@ -140,8 +140,8 @@ let g:ale_fixers = {
 " far.vim
 let g:far#preview_window_height = 15
 let g:far#file_mask_favorites = [
-  \ '%',
   \ '**/*.*',
+  \ '%',
   \ '**/*.rb',
   \ '**/*.js',
   \ '**/*.ts',
@@ -154,12 +154,14 @@ let g:far#file_mask_favorites = [
   \ '**/*.scss',
   \ '**/*.less',
   \ '**/*.vim',
+  \ '**/*.ex*',
   \ '**/*.ex',
   \ '**/*.exs',
   \ ]
 if exists('g:grep_program')
   let g:far#source = g:grep_program
   let g:far#file_mask_favorites = [
+    \ '.*',
     \ '%',
     \ '\.rb$',
     \ '\.js$',
@@ -173,6 +175,7 @@ if exists('g:grep_program')
     \ '\.scss$',
     \ '\.less$',
     \ '\.vim$',
+    \ '\.ex.*$',
     \ '\.ex$',
     \ '\.exs$',
     \ ]
