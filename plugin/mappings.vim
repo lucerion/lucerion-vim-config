@@ -139,6 +139,6 @@ augroup END
 " far.vim
 augroup FarMappings
   autocmd!
-  autocmd FileType far_vim nnoremap <buffer><silent>q :q<CR>
-  autocmd FileType far_vim nnoremap <buffer><silent>r Xi:Fardo<CR>I
+  autocmd FileType far nnoremap <buffer><silent>q :q<CR>
+  autocmd FileType far nnoremap <buffer><silent>r Xi:Fardo<CR>I
 augroup END
