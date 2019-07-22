@@ -180,3 +180,15 @@ if exists('g:grep_program')
     \ '\.exs$',
     \ ]
 endif
+
+" projectionist
+let g:projectionist_heuristics = {
+ \   'lib/*.ex': {
+ \     'alternate': 'test/{}_test.exs',
+ \     'type': 'src'
+ \   },
+ \   'test/*_test.ex': {
+ \     'alternate': 'lib/{}.ex',
+ \     'type': 'test'
+ \   }
+ \ }
