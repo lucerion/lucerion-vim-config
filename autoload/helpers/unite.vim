@@ -1,4 +1,26 @@
-func! helpers#unite#grep(selected_symbols_count, input) abort
+if !exists('s:previous_grep')
+  let s:previous_grep = {}
+endif
+
+func! helpers#unite#grep(previous, selected_symbols_count, input) abort
+  let l:previous_input = get(s:previous_grep, 'input')
+  let l:previous_path = get(s:previous_grep, 'path')
+
+  let l:input = a:previous && !empty(l:previous_input) ? l:previous_input : s:input(a:selected_symbols_count, a:input)
+  if empty(l:input)
+    return
+  endif
+
+  let l:path = a:previous && !empty(l:previous_path) ? l:previous_path : input('Target: ', '.', 'file')
+
+  silent exec 'Unite grep' . ' -input='.escape(l:input, ' \\.') . ' -path='.l:path
+
+  let s:previous_grep = { 'input': l:input, 'path': l:path }
+endfunc
+
+func! s:input(selected_symbols_count, input) abort
+  let l:input = a:input
+
   if a:selected_symbols_count >= 1
     try
       let l:register_previous_value = @z
@@ -7,9 +29,15 @@ func! helpers#unite#grep(selected_symbols_count, input) abort
     finally
       let @z = l:register_previous_value
     endtry
-  else
-    let l:input = empty(a:input) ? expand('<cword>') : a:input
   endif
 
-  silent exec 'Unite grep -input=' . escape(l:input, ' \\.')
+  if empty(l:input)
+    let l:input = expand('<cword>')
+  endif
+
+  if empty(l:input)
+    let l:input = input('Pattern: ')
+  endif
+
+  return l:input
 endfunc
