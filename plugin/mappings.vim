@@ -140,7 +140,7 @@ augroup END
 augroup FarMappings
   autocmd!
   autocmd FileType far nnoremap <buffer><silent>q :q<CR>
-  autocmd FileType far nnoremap <buffer><silent>r Xi:Fardo<CR>I
+  autocmd FileType far nmap <buffer><silent>r Xi:Fardo<CR>I
 augroup END
 
 " help
