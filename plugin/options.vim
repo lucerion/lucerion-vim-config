@@ -194,13 +194,13 @@ let g:projectionist_heuristics = {
  \ }
 
 " vim-autocomplpop, alchemist.vim
-let g:acp_behavior = extend(g:acp_behavior, {
+let g:acp_behavior = {
   \   'elixir': [{
   \     'command': "\<C-x>\<C-o>",
   \     'meets': 'acp#meetsForRubyOmni',
   \     'repeat': 0
   \   }]
-  \ })
+  \ }
 
 " alchemist.vim
 let g:alchemist_tag_map = 'gf'
