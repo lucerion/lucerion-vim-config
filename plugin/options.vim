@@ -201,3 +201,6 @@ let g:acp_behavior = extend(g:acp_behavior, {
   \     'repeat': 0
   \   }]
   \ })
+
+" alchemist.vim
+let g:alchemist_tag_map = 'gf'
