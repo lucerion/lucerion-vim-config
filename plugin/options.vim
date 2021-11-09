@@ -204,3 +204,6 @@ let g:acp_behavior = {
 
 " alchemist.vim
 let g:alchemist_tag_map = 'gf'
+
+" vim-snipmate
+let g:snipMate = { 'snippet_version' : 1 }
