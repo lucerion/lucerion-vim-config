@@ -83,6 +83,10 @@ augroup delimitMate_quotes
   autocmd!
   autocmd FileType ruby,eruby,haml,slim let delimitMate_quotes = "\" ' ` |"
 augroup END
+" https://github.com/tpope/vim-endwise/issues/133
+if empty(maparg('<CR>', 'i'))
+  imap <CR> <Plug>delimitMateCR
+endif
 
 " vim-gitgutter
 let g:gitgutter_max_signs = 5000
