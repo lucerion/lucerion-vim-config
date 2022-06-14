@@ -38,22 +38,22 @@ endif
 
 " vim-ags
 " removed: --filename, --numbers
-let g:ags_agargs = {
-  \ '--color-match':        ['"32;40"', ''],
-  \ '--column':             ['', ''],
-  \ '--color':              ['', ''],
-  \ '--context':            ['g:ags_agcontext', '-C'],
-  \ '--group':              ['', ''],
-  \ '--heading':            ['', '-H'],
-  \ '--color-path':         ['"1;31"', ''],
-  \ '--color-line-number':  ['"1;30"', ''],
-  \ '--max-count':          ['g:ags_agmaxcount', '-m'],
-  \ '--break':              ['', ''],
-  \ '--ignore':             ['tmp', ''],
-  \ }
+" let g:ags_agargs = {
+"   \ '--color-match':        ['"32;40"', ''],
+"   \ '--column':             ['', ''],
+"   \ '--color':              ['', ''],
+"   \ '--context':            ['g:ags_agcontext', '-C'],
+"   \ '--group':              ['', ''],
+"   \ '--heading':            ['', '-H'],
+"   \ '--color-path':         ['"1;31"', ''],
+"   \ '--color-line-number':  ['"1;30"', ''],
+"   \ '--max-count':          ['g:ags_agmaxcount', '-m'],
+"   \ '--break':              ['', ''],
+"   \ '--ignore':             ['tmp', ''],
+"   \ }
 
 " tagbar
-let g:tagbar_compact = 1
+" let g:tagbar_compact = 1
 
 " vimfiler.vim
 let g:vimfiler_as_default_explorer = 1
@@ -98,7 +98,7 @@ let g:splitjoin_ruby_hanging_args = 0
 let g:instant_markdown_autostart = 0
 
 " vim-extradite
-let g:extradite_showhash = 1
+" let g:extradite_showhash = 1
 
 " vim-extract
 let g:extract_hidden = 1
