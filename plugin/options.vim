@@ -1,4 +1,4 @@
-if helpers#plugin#loaded('srcery-vim')
+if &rtp =~ 'srcery'
   colorscheme srcery
   let [g:srcery_bold, g:srcery_italic, g:srcery_underline] = [0, 0, 0]
 endif
@@ -12,10 +12,10 @@ if executable('ag')
 endif
 
 set statusline=%w%h\ %F\ %m
-if helpers#plugin#loaded('vim-fugitive')
+if &rtp =~ 'vim-fugitive'
   set statusline+=\ %{fugitive#statusline()}
 endif
-if helpers#plugin#loaded('vim-smartword')
+if &rtp =~ 'vim-smartword'
   set statusline+=\ %{smartword#status()}
 endif
 set statusline+=\ %r%=%l-%v/%L
@@ -30,30 +30,30 @@ if exists('g:grep_command')
 endif
 
 " ctrlp-py-matcher
-if helpers#plugin#loaded('ctrlp-py-matcher')
+if &rtp =~ 'ctrlp-py-matcher'
   let g:ctrlp_match_func = { 'match' : 'pymatcher#PyMatch' }
   let g:ctrlp_max_files = 0
   let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:1000'
-endif
+end
 
 " vim-ags
 " removed: --filename, --numbers
-" let g:ags_agargs = {
-"   \ '--color-match':        ['"32;40"', ''],
-"   \ '--column':             ['', ''],
-"   \ '--color':              ['', ''],
-"   \ '--context':            ['g:ags_agcontext', '-C'],
-"   \ '--group':              ['', ''],
-"   \ '--heading':            ['', '-H'],
-"   \ '--color-path':         ['"1;31"', ''],
-"   \ '--color-line-number':  ['"1;30"', ''],
-"   \ '--max-count':          ['g:ags_agmaxcount', '-m'],
-"   \ '--break':              ['', ''],
-"   \ '--ignore':             ['tmp', ''],
-"   \ }
+let g:ags_agargs = {
+  \ '--color-match':        ['"32;40"', ''],
+  \ '--column':             ['', ''],
+  \ '--color':              ['', ''],
+  \ '--context':            ['g:ags_agcontext', '-C'],
+  \ '--group':              ['', ''],
+  \ '--heading':            ['', '-H'],
+  \ '--color-path':         ['"1;31"', ''],
+  \ '--color-line-number':  ['"1;30"', ''],
+  \ '--max-count':          ['g:ags_agmaxcount', '-m'],
+  \ '--break':              ['', ''],
+  \ '--ignore':             ['tmp', ''],
+  \ }
 
 " tagbar
-" let g:tagbar_compact = 1
+let g:tagbar_compact = 1
 
 " vimfiler.vim
 let g:vimfiler_as_default_explorer = 1
@@ -65,7 +65,7 @@ let g:vimfiler_tree_leaf_icon = ' '
 let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_readonly_file_icon = '×'
-if helpers#plugin#loaded('vimfiler.vim')
+if &rtp =~ 'vimfiler.vim'
   call vimfiler#custom#profile('default', 'context', { 'columns': 'size', 'safe': 0 })
 endif
 
@@ -90,7 +90,9 @@ endif
 
 " vim-gitgutter
 let g:gitgutter_max_signs = 5000
-autocmd BufWritePost * GitGutter
+if &rtp =~ 'vim-gitgutter'
+  autocmd BufWritePost * GitGutter
+endif
 
 " vim-pasta
 let g:pasta_disabled_filetypes = ['vimfiler', 'agsv']
@@ -102,7 +104,7 @@ let g:splitjoin_ruby_hanging_args = 0
 let g:instant_markdown_autostart = 0
 
 " vim-extradite
-" let g:extradite_showhash = 1
+let g:extradite_showhash = 1
 
 " vim-extract
 let g:extract_hidden = 1
@@ -115,7 +117,7 @@ let g:smartword_enabled = 1
 
 " unite.vim
 let g:unite_enable_auto_select = 0
-if helpers#plugin#loaded('unite.vim')
+if &rtp =~ 'unite.vim'
   call unite#custom#profile('default', 'context', {
     \   'direction':    'below',
     \   'prompt':       '> ',
