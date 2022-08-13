@@ -2,7 +2,7 @@ if !exists('s:previous_grep')
   let s:previous_grep = {}
 endif
 
-func! helpers#unite#grep(previous, selected_symbols_count, input) abort
+func! unite#grep_wrapper(previous, selected_symbols_count, input) abort
   let l:previous_input = get(s:previous_grep, 'input')
   let l:previous_path = get(s:previous_grep, 'path')
 
