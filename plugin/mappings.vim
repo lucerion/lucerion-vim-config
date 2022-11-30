@@ -131,10 +131,10 @@ augroup UniteMappings
 augroup END
 
 " vim-ags
-" augroup AgsMappings
-"   autocmd!
-"   autocmd FileType agsv nnoremap <buffer>ot :exec 'tab split ' . ags#filePath(line('.'))<CR>
-" augroup END
+augroup AgsMappings
+  autocmd!
+  autocmd FileType agsv nnoremap <buffer>ot :exec 'tab split ' . ags#filePath(line('.'))<CR>
+augroup END
 
 " far.vim
 augroup FarMappings
