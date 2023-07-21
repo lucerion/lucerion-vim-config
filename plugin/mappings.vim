@@ -55,7 +55,7 @@ augroup VimFilerMappings
 augroup END
 func! s:set_vimfiler_mappings() abort
   nmap <buffer><CR>     <Plug>(vimfiler_cd_or_edit)
-  nmap <buffer><expr>ot vimfiler#do_switch_action('tabopen')
+  nmap <buffer><expr>t vimfiler#do_switch_action('tabopen')
   nmap <buffer>q        <Plug>(vimfiler_hide)
   nmap <buffer><tab>    <Plug>(vimfiler_switch_to_another_vimfiler)
   nmap <buffer>j        <Plug>(vimfiler_loop_cursor_down)
@@ -65,8 +65,8 @@ func! s:set_vimfiler_mappings() abort
   nmap <buffer>gj       <Plug>(vimfiler_jump_last_child)
   nmap <buffer>gk       <Plug>(vimfiler_jump_first_child)
   nmap <buffer>gg       <Plug>(vimfiler_cursor_top)
-  nmap <buffer>zo       <Plug>(vimfiler_expand_tree)
-  nmap <buffer>zO       <Plug>(vimfiler_expand_tree_recursive)
+  nmap <buffer>o       <Plug>(vimfiler_expand_tree)
+  nmap <buffer>O       <Plug>(vimfiler_expand_tree_recursive)
   nmap <buffer>i        :cd
   nmap <buffer>cd       <Plug>(vimfiler_make_directory)
   nmap <buffer>cf       <Plug>(vimfiler_new_file)
