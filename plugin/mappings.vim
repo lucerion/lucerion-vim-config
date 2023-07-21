@@ -1,4 +1,4 @@
-let mapleader = ' '
+let mapleader = <Space>
 
 noremap Q O<Esc>
 noremap q o<Esc>
@@ -55,6 +55,7 @@ augroup VimFilerMappings
 augroup END
 func! s:set_vimfiler_mappings() abort
   nmap <buffer><CR>     <Plug>(vimfiler_cd_or_edit)
+  nmap <buffer><expr>ot vimfiler#do_switch_action('tabopen')
   nmap <buffer>q        <Plug>(vimfiler_hide)
   nmap <buffer><tab>    <Plug>(vimfiler_switch_to_another_vimfiler)
   nmap <buffer>j        <Plug>(vimfiler_loop_cursor_down)
@@ -64,21 +65,20 @@ func! s:set_vimfiler_mappings() abort
   nmap <buffer>gj       <Plug>(vimfiler_jump_last_child)
   nmap <buffer>gk       <Plug>(vimfiler_jump_first_child)
   nmap <buffer>gg       <Plug>(vimfiler_cursor_top)
-  nmap <buffer>o        <Plug>(vimfiler_expand_tree)
-  nmap <buffer>O        <Plug>(vimfiler_expand_tree_recursive)
-  nmap <buffer><expr>t  vimfiler#do_switch_action('tabopen')
-  nmap <buffer>i        :VimFilerPrompt<CR>
+  nmap <buffer>zo       <Plug>(vimfiler_expand_tree)
+  nmap <buffer>zO       <Plug>(vimfiler_expand_tree_recursive)
+  nmap <buffer>i        :cd
   nmap <buffer>cd       <Plug>(vimfiler_make_directory)
   nmap <buffer>cf       <Plug>(vimfiler_new_file)
   nmap <buffer>s        <Plug>(vimfiler_toggle_mark_current_line)
-  nmap <buffer>r        <Plug>(vimfiler_rename_file)
-  nmap <buffer>C        <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_copy_file)
-  nmap <buffer>M        <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_move_file)
-  nmap <buffer>D        <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_delete_file)
-  nmap <buffer>dd       <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_clipboard_move_file)
-  nmap <buffer>p        <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_clipboard_paste)
+  nmap <buffer>cw       <Plug>(vimfiler_rename_file)
+  nmap <buffer>Y        <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_copy_file)
   nmap <buffer>yy       <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_clipboard_copy_file)
   nmap <buffer>yp       <Plug>(vimfiler_yank_full_path)
+  nmap <buffer>D        <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_delete_file)
+  nmap <buffer>dd       <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_clipboard_move_file)
+  nmap <buffer>M        <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_move_file)
+  nmap <buffer>p        <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_clipboard_paste)
   nmap <buffer>!        <Plug>(vimfiler_execute_shell_command)
   nmap <buffer>gf       <Plug>(vimfiler_find)
   nmap <buffer>gr       <Plug>(vimfiler_grep)
