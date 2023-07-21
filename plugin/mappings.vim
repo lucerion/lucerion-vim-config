@@ -1,4 +1,4 @@
-let mapleader = <Space>
+let mapleader = ' '
 
 noremap Q O<Esc>
 noremap q o<Esc>
