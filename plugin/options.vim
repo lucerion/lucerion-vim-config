@@ -55,19 +55,10 @@ let g:ags_agargs = {
 " tagbar
 let g:tagbar_compact = 1
 
-" vimfiler.vim
-let g:vimfiler_as_default_explorer = 1
-let g:vimfiler_no_default_key_mappings = 1
-let g:vimfiler_expand_jump_to_first_child = 0
-let g:vimfiler_ignore_pattern = ' '
-let g:vimfiler_time_format = '%Y-%m-%d %H:%M'
-let g:vimfiler_tree_leaf_icon = ' '
-let g:vimfiler_tree_opened_icon = '▾'
-let g:vimfiler_tree_closed_icon = '▸'
-let g:vimfiler_readonly_file_icon = '×'
-if &rtp =~ 'vimfiler.vim'
-  call vimfiler#custom#profile('default', 'context', { 'columns': 'size', 'safe': 0 })
-endif
+" vifm.vim
+let g:vifm_embed_split = 1
+let g:vifm_embed_term = 1
+let g:vifm_exec_args .= "-c ':only'"
 
 " emmet-vim
 let g:user_emmet_leader_key = '<C-e>'

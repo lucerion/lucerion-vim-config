@@ -45,50 +45,9 @@ noremap <Leader>rv :TestVisit<CR>
 noremap <Leader>sj :SplitjoinJoin<CR>
 noremap <Leader>ss :SplitjoinSplit<CR>
 
-" vimfiler.vim
-noremap <Leader>os :VimFilerSplit -find -force-quit -horizontal<CR>
-noremap <Leader>ov :VimFilerSplit -find -force-quit -winwidth=50<CR>
-
-augroup VimFilerMappings
-  autocmd!
-  autocmd FileType vimfiler call s:set_vimfiler_mappings()
-augroup END
-func! s:set_vimfiler_mappings() abort
-  nmap <buffer><CR>     <Plug>(vimfiler_cd_or_edit)
-  nmap <buffer><expr>t vimfiler#do_switch_action('tabopen')
-  nmap <buffer>q        <Plug>(vimfiler_hide)
-  nmap <buffer><tab>    <Plug>(vimfiler_switch_to_another_vimfiler)
-  nmap <buffer>j        <Plug>(vimfiler_loop_cursor_down)
-  nmap <buffer>k        <Plug>(vimfiler_loop_cursor_up)
-  nmap <buffer>l        <Plug>(vimfiler_smart_l)
-  nmap <buffer>h        <Plug>(vimfiler_smart_h)
-  nmap <buffer>gj       <Plug>(vimfiler_jump_last_child)
-  nmap <buffer>gk       <Plug>(vimfiler_jump_first_child)
-  nmap <buffer>gg       <Plug>(vimfiler_cursor_top)
-  nmap <buffer>o       <Plug>(vimfiler_expand_tree)
-  nmap <buffer>O       <Plug>(vimfiler_expand_tree_recursive)
-  nmap <buffer>i        :cd
-  nmap <buffer>cd       <Plug>(vimfiler_make_directory)
-  nmap <buffer>cf       <Plug>(vimfiler_new_file)
-  nmap <buffer>s        <Plug>(vimfiler_toggle_mark_current_line)
-  nmap <buffer>cw       <Plug>(vimfiler_rename_file)
-  nmap <buffer>Y        <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_copy_file)
-  nmap <buffer>yy       <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_clipboard_copy_file)
-  nmap <buffer>yp       <Plug>(vimfiler_yank_full_path)
-  nmap <buffer>D        <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_delete_file)
-  nmap <buffer>dd       <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_clipboard_move_file)
-  nmap <buffer>M        <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_move_file)
-  nmap <buffer>p        <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_clipboard_paste)
-  nmap <buffer>!        <Plug>(vimfiler_execute_shell_command)
-  nmap <buffer>gf       <Plug>(vimfiler_find)
-  nmap <buffer>gr       <Plug>(vimfiler_grep)
-  nmap <buffer>g?       <Plug>(vimfiler_help)
-  nmap <buffer>*        <Plug>(vimfiler_set_current_mask)
-  nmap <buffer>~        <Plug>(vimfiler_switch_to_home_directory)
-  nmap <buffer>-        <Plug>(vimfiler_switch_to_project_directory)
-  nmap <buffer>>        <C-w>><Plug>(vimfiler_redraw_screen)
-  nmap <buffer><        <C-w><<Plug>(vimfiler_redraw_screen)
-endfunc
+" vifm.vim
+noremap <Leader>os :Left 50 TabVifm<CR>
+noremap <Leader>ov :Bottom TabVifm<CR>
 
 " ctrlp.vim
 noremap <Leader>of :CtrlPBufTag<CR>
