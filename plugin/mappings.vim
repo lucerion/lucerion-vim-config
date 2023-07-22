@@ -49,11 +49,6 @@ noremap <Leader>ss :SplitjoinSplit<CR>
 noremap <Leader>os :Left 50 TabVifm<CR>
 noremap <Leader>ov :Bottom TabVifm<CR>
 
-" ctrlp.vim
-noremap <Leader>of :CtrlPBufTag<CR>
-noremap <Leader>ot :CtrlPTag<CR>
-noremap <Leader>ol :CtrlPLine<CR>
-
 " vim-wordmotion
 let g:wordmotion_mappings = {
   \ 'w':  '<Leader>w',
@@ -82,18 +77,6 @@ omap aa <Plug>SidewaysArgumentTextobjA
 xmap aa <Plug>SidewaysArgumentTextobjA
 omap ia <Plug>SidewaysArgumentTextobjI
 xmap ia <Plug>SidewaysArgumentTextobjI
-
-" unite.vim
-augroup UniteMappings
-  autocmd!
-  autocmd FileType unite imap <buffer><C-e> <Plug>(unite_move_head)
-augroup END
-
-" vim-ags
-augroup AgsMappings
-  autocmd!
-  autocmd FileType agsv nnoremap <buffer>ot :exec 'tab split ' . ags#filePath(line('.'))<CR>
-augroup END
 
 " far.vim
 augroup FarMappings
