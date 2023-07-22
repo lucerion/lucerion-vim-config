@@ -3,14 +3,6 @@ if &rtp =~ 'srcery'
   let [g:srcery_bold, g:srcery_italic, g:srcery_underline] = [0, 0, 0]
 endif
 
-if executable('ag')
-  let g:grep_program = 'ag'
-  let g:grep_options = '--vimgrep --hidden --silent'
-  let g:grep_command = g:grep_program . ' ' . g:grep_options
-
-  silent exec 'set grepprg=' . fnameescape(g:grep_command)
-endif
-
 set statusline=%w%h\ %F\ %m
 if &rtp =~ 'vim-fugitive'
   set statusline+=\ %{fugitive#statusline()}
@@ -19,38 +11,6 @@ if &rtp =~ 'vim-smartword'
   set statusline+=\ %{smartword#status()}
 endif
 set statusline+=\ %r%=%l-%v/%L
-
-" ctrlp.vim
-let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_use_caching = 0
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_user_command = 'find %s -type f'
-if exists('g:grep_command')
-  let g:ctrlp_user_command = 'ag -l'
-endif
-
-" ctrlp-py-matcher
-if &rtp =~ 'ctrlp-py-matcher'
-  let g:ctrlp_match_func = { 'match' : 'pymatcher#PyMatch' }
-  let g:ctrlp_max_files = 0
-  let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:1000'
-end
-
-" vim-ags
-" removed: --filename, --numbers
-let g:ags_agargs = {
-  \ '--color-match':        ['"32;40"', ''],
-  \ '--column':             ['', ''],
-  \ '--color':              ['', ''],
-  \ '--context':            ['g:ags_agcontext', '-C'],
-  \ '--group':              ['', ''],
-  \ '--heading':            ['', '-H'],
-  \ '--color-path':         ['"1;31"', ''],
-  \ '--color-line-number':  ['"1;30"', ''],
-  \ '--max-count':          ['g:ags_agmaxcount', '-m'],
-  \ '--break':              ['', ''],
-  \ '--ignore':             ['tmp', ''],
-  \ }
 
 " tagbar
 let g:tagbar_compact = 1
@@ -94,9 +54,6 @@ let g:splitjoin_ruby_hanging_args = 0
 " vim-instant-markdown
 let g:instant_markdown_autostart = 0
 
-" vim-extradite
-let g:extradite_showhash = 1
-
 " vim-extract
 let g:extract_hidden = 1
 
@@ -105,20 +62,6 @@ let g:executor_reuse_buffer = 1
 
 " vim-smartword
 let g:smartword_enabled = 1
-
-" unite.vim
-let g:unite_enable_auto_select = 0
-if &rtp =~ 'unite.vim'
-  call unite#custom#profile('default', 'context', {
-    \   'direction':    'below',
-    \   'prompt':       '> ',
-    \   'prompt_focus': 1
-    \ })
-endif
-if exists('g:grep_command')
-  let g:unite_source_grep_command = g:grep_program
-  let g:unite_source_grep_default_opts = g:grep_options
-endif
 
 " ale
 let g:ale_sign_warning = '>'
