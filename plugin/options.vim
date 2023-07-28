@@ -9,8 +9,13 @@ if &rtp =~ 'vim-fugitive'
 endif
 set statusline+=\ %r%=%l-%v/%L
 
-let g:grep_prog = 'ag'
-let g:grep_options = '--hidden --silent --vimgrep'
+if executable('ag')
+  let g:grep_prog = 'ag'
+  let g:grep_options = '--hidden --silent --vimgrep'
+  let g:grep_command = g:grep_prog . ' ' . g:grep_options
+
+  silent exec 'set grepprg=' . fnameescape(g:grep_command)
+endif
 
 " tagbar
 let g:tagbar_compact = 1
@@ -95,6 +100,28 @@ let g:far#file_mask_favorites = [
   \ '**/*.ex',
   \ '**/*.exs',
   \ ]
+if exists('g:grep_prog')
+  let g:far#source = g:grep_prog
+  let g:far#file_mask_favorites = [
+    \ '.*',
+    \ '%',
+    \ '\.rb$',
+    \ '\.js$',
+    \ '\.ts$',
+    \ '\.coffee$',
+    \ '\.html$',
+    \ '\.erb$',
+    \ '\.haml$',
+    \ '\.slim$',
+    \ '\.css$',
+    \ '\.scss$',
+    \ '\.less$',
+    \ '\.vim$',
+    \ '\.ex.*$',
+    \ '\.ex$',
+    \ '\.exs$',
+    \ ]
+endif
 
 " projectionist
 let g:projectionist_heuristics = {
