@@ -7,9 +7,6 @@ set statusline=%w%h\ %F\ %m
 if &rtp =~ 'vim-fugitive'
   set statusline+=\ %{fugitive#statusline()}
 endif
-if &rtp =~ 'vim-smartword'
-  set statusline+=\ %{smartword#status()}
-endif
 set statusline+=\ %r%=%l-%v/%L
 
 " tagbar
@@ -24,7 +21,7 @@ let g:vifm_exec_args .= "-c ':only'"
 let g:user_emmet_leader_key = '<C-e>'
 
 " vim-trailing-whitespace
-let g:extra_whitespace_ignored_filetypes = ['vimfiler', 'agsv', 'far_vim', 'conque_term']
+let g:extra_whitespace_ignored_filetypes = ['far_vim']
 
 " delimitMate
 let delimitMate_expand_cr = 2
@@ -44,9 +41,6 @@ let g:gitgutter_max_signs = 5000
 if &rtp =~ 'vim-gitgutter'
   autocmd BufWritePost * GitGutter
 endif
-
-" vim-pasta
-let g:pasta_disabled_filetypes = ['vimfiler', 'agsv']
 
 " splitjoin.vim
 let g:splitjoin_ruby_hanging_args = 0
@@ -98,28 +92,6 @@ let g:far#file_mask_favorites = [
   \ '**/*.ex',
   \ '**/*.exs',
   \ ]
-if exists('g:grep_program')
-  let g:far#source = g:grep_program
-  let g:far#file_mask_favorites = [
-    \ '.*',
-    \ '%',
-    \ '\.rb$',
-    \ '\.js$',
-    \ '\.ts$',
-    \ '\.coffee$',
-    \ '\.html$',
-    \ '\.erb$',
-    \ '\.haml$',
-    \ '\.slim$',
-    \ '\.css$',
-    \ '\.scss$',
-    \ '\.less$',
-    \ '\.vim$',
-    \ '\.ex.*$',
-    \ '\.ex$',
-    \ '\.exs$',
-    \ ]
-endif
 
 " projectionist
 let g:projectionist_heuristics = {
