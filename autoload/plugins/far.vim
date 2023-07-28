@@ -1,9 +1,11 @@
+comm! -nargs=* -range Fr call s:replace(<count>, <q-args>)
+
 let s:default_file_masks = {
   \ 'vimgrep': '**/*.*',
   \ 'ag': '.*',
   \ }
 
-func! plugins#far#replace(selected_symbols, pattern) abort
+func! s:replace(selected_symbols, pattern) abort
   silent exec join([':Far', s:pattern(a:selected_symbols, a:pattern), s:replace_with(), s:filemask()])
 endfunc
 
