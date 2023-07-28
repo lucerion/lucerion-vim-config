@@ -22,7 +22,7 @@ endfunc
 func! s:pattern(selected_symbols, pattern) abort
   if a:selected_symbols >= 1
     return s:selection()
-  end
+  endif
 
   return empty(a:pattern) ? expand('<cword>') : a:pattern
 endfunc

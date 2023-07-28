@@ -26,7 +26,7 @@ func! s:selection() abort
     let @z = l:register_previous_value
   endtry
 
-  return s:selection
+  return l:selection
 endfunc
 
 func! s:replace_with() abort
