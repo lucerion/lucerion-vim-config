@@ -9,7 +9,7 @@ noremap <S-h> gT
 
 noremap <Leader>tl :tabmove +1<CR>
 noremap <Leader>th :tabmove -1<CR>
-noremap <Leader>tL :tabmove <CR>
+noremap <Leader>tL :tabmove<CR>
 noremap <Leader>tH :tabmove 0<CR>
 
 noremap <C-l> <C-w>l
@@ -20,17 +20,18 @@ noremap <C-k> <C-w>k
 vnoremap < <gv
 vnoremap > >gv
 
-" next paragraph begin
+" jump to
+" beginning of the next paragraph
 noremap <Leader>jj })
-" next paragraph end
+" end of the next paragraph
 noremap <Leader>J }}k
-" previous paragraph begin
+" beginning of the previous paragraph
 noremap <Leader>kk {(
-" previous paragraph end
+" end of the previous paragraph
 noremap <Leader>K {k
-" current paragraph begin
+" beginning of current paragraph
 noremap <Leader>jk }k
-" current paragraph end
+" end of the current paragraph
 noremap <Leader>kj {j
 
 " vim-test
@@ -46,8 +47,10 @@ noremap <Leader>sj :SplitjoinJoin<CR>
 noremap <Leader>ss :SplitjoinSplit<CR>
 
 " vifm.vim
-noremap <Leader>os :Left 50 TabVifm<CR>
-noremap <Leader>ov :Bottom TabVifm<CR>
+noremap <Leader>oe :Left 50 Vifm<CR>
+noremap <Leader>ot :Left 50 TabVifm<CR>
+noremap <Leader>os :Left 50 SplitVifm<CR>
+noremap <Leader>ov :Left 50 VsplitVifm<CR>
 
 " vim-wordmotion
 let g:wordmotion_mappings = {
@@ -62,10 +65,10 @@ let g:wordmotion_mappings = {
 
 " vim-smartword
 let g:smartword_mappings = {
-  \ 'w':  '<Leader><Leader>w',
-  \ 'b':  '<Leader><Leader>b',
-  \ 'e':  '<Leader><Leader>e',
-  \ 'ge': '<Leader><Leader>ge'
+  \ 'w':  '<Leader>W',
+  \ 'b':  '<Leader>B',
+  \ 'e':  '<Leader>E',
+  \ 'ge': '<Leader>gE'
   \ }
 
 " sideways.vim
