@@ -9,6 +9,9 @@ if &rtp =~ 'vim-fugitive'
 endif
 set statusline+=\ %r%=%l-%v/%L
 
+let g:grep_prog = 'ag'
+let g:grep_options = '--hidden --silent --vimgrep'
+
 " tagbar
 let g:tagbar_compact = 1
 
