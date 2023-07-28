@@ -3,24 +3,28 @@ let s:default_file_masks = {
   \ 'ag': '.*',
   \ }
 
-func! plugins#far#replace(selected_symbols_count, pattern) abort
-  silent exec join([':Far', s:pattern(a:selected_symbols_count, a:pattern), s:replace_with(), s:filemask()])
+func! plugins#far#replace(selected_symbols, pattern) abort
+  silent exec join([':Far', s:pattern(a:selected_symbols, a:pattern), s:replace_with(), s:filemask()])
 endfunc
 
-func! s:pattern(selected_symbols_count, pattern) abort
-  if a:selected_symbols_count >= 1
-    try
-      let l:register_previous_value = @z
-      normal! gv"zy
-      let l:pattern = @z
-    finally
-      let @z = l:register_previous_value
-    endtry
-  else
-    let l:pattern = empty(a:pattern) ? expand('<cword>') : a:pattern
+func! s:pattern(selected_symbols, pattern) abort
+  if a:selected_symbols >= 1
+    return s:selection()
   endif
 
-  return l:pattern
+  return empty(a:pattern) ? expand('<cword>') : a:pattern
+endfunc
+
+func! s:selection() abort
+  try
+    let l:register_previous_value = @z
+    normal! gv"zy
+    let l:selection = @z
+  finally
+    let @z = l:register_previous_value
+  endtry
+
+  return s:selection
 endfunc
 
 func! s:replace_with() abort
