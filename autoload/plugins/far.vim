@@ -3,7 +3,7 @@ let s:default_file_masks = {
   \ 'ag': '.*',
   \ }
 
-func! wrappers#far#replace(selected_symbols_count, pattern) abort
+func! plugins#far#replace(selected_symbols_count, pattern) abort
   silent exec join([':Far', s:pattern(a:selected_symbols_count, a:pattern), s:replace_with(), s:filemask()])
 endfunc
 
