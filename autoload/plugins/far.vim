@@ -14,9 +14,9 @@ endfunc
 func! s:filemask() abort
   let l:filemask = input('File mask: ', '', 'customlist,far#FarFileMaskComplete')
 
-  if !empty(l:filemask)
-    return l:filemask
+  if empty(l:filemask)
+    return get(s:default_file_masks, g:far#source, '')
   endif
 
-  return get(s:default_file_masks, g:far#source, '')
+  return l:filemask
 endfunc
