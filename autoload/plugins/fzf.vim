@@ -12,7 +12,7 @@ func! plugins#fzf#grep(selected_symbols, user_input) abort
   endif
 
   let l:dir = input('Directory: ', '.', 'file')
-  if !isdirectory('l:dir')
+  if !isdirectory(l:dir)
     call plugins#common#show_error('Directory ' . l:dir . ' not found') | return
   endif
 
