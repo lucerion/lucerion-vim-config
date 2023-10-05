@@ -23,7 +23,7 @@ let g:tagbar_compact = 1
 " vifm.vim
 let g:vifm_embed_split = 1
 let g:vifm_embed_term = 1
-let g:vifm_exec_args .= "-c ':only'"
+let g:vifm_exec_args = "-c ':only'"
 
 " emmet-vim
 let g:user_emmet_leader_key = '<C-e>'
