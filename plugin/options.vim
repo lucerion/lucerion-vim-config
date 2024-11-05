@@ -149,3 +149,8 @@ let g:alchemist_tag_map = 'gf'
 
 " vim-snipmate
 let g:snipMate = { 'snippet_version' : 1 }
+
+" fzf.vim
+if !exists('g:fzf_bookmarks')
+  let g:fzf_bookmarks = []
+endif
