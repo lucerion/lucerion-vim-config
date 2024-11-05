@@ -93,3 +93,6 @@ augroup VimHelpMappings
   autocmd!
   autocmd FileType help nnoremap <buffer>q :q<CR>
 augroup END
+
+" fzf.vim
+nnoremap <C-p> :Files ./
