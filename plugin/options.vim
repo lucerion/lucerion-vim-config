@@ -17,6 +17,15 @@ if executable('ag')
   silent exec 'set grepprg=' . fnameescape(g:grep_command)
 endif
 
+" titles in tmux
+set titlestring=%t
+if &term =~ '256color' || &term =~ 'tmux' || &term =~ 'screen'
+  let &t_ts = "\e]2;"
+  let &t_fs = "\007"
+  let &t_ts = "\ek"
+  let &t_fs = "\e\\"
+endif
+
 " tagbar
 let g:tagbar_compact = 1
 
